@@ -1,0 +1,55 @@
+.forecast-container {
+  margin-top: 40px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.forecast-container h3 {
+  font-size: 1.5rem;
+  color: #ffeeee;
+  margin-bottom: 20px;
+}
+
+.forecast-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.forecast-day {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px 10px;
+  width: 120px;
+  transition: transform 0.2s ease;
+}
+
+.forecast-day:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.forecast-day div {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.forecast-day img {
+  width: 60px;
+  height: 60px;
+}
+
+.forecast-day .temp {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0077ff;
+}
+
+.forecast-day .desc {
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  color: #666;
+}

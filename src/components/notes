@@ -1,0 +1,102 @@
+/* Dynamic animated backgrounds 
+.bg-clear {
+  background: linear-gradient(-45deg, #56ccf2, #2f80ed, #00c6ff, #0072ff);
+  background-size: 400% 400%;
+  animation: clearAnim 15s ease infinite;
+}
+
+.bg-clouds {
+  background: linear-gradient(-45deg, #bdc3c7, #2c3e50);
+  background-size: 400% 400%;
+  animation: cloudsAnim 20s ease infinite;
+}
+
+.bg-rain {
+  background: linear-gradient(-45deg, #314755, #26a0da);
+  background-size: 400% 400%;
+  animation: rainAnim 12s ease infinite;
+}
+
+.bg-snow {
+  background: linear-gradient(-45deg, #e6dada, #274046);
+  background-size: 400% 400%;
+  animation: snowAnim 18s ease infinite;
+}
+
+.bg-mist {
+  background: linear-gradient(135deg, #3e5151, #decba4);
+  background-size: 400% 400%;
+  animation: backgroundFade 10s infinite alternate;
+}
+
+@keyframes clearAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes cloudsAnim {
+  0% { background-position: 100% 0%; }
+  50% { background-position: 0% 100%; }
+  100% { background-position: 100% 0%; }
+}
+
+@keyframes rainAnim {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+
+@keyframes snowAnim {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+----> weather background.ts file
+
+export function getWeatherBackground(weather: string): string {
+  switch (weather.toLowerCase()) {
+    case "clear":
+      return "bg-clear";
+    case "clouds":
+      return "bg-clouds";
+    case "rain":
+      return "bg-rain";
+    case "snow":
+      return "bg-snow";
+    case "mist":
+      return "bg-mist";
+    case "thunderstorm":
+      return "bg-thunder";
+    default:
+      return "bg-default";
+  }
+}
+--->  app.tsx file
+  useEffect(() => {
+    const weatherClass = weatherData
+      ? getWeatherBackground(weatherData.weather[0].main)
+      : "";
+
+    const weatherClasses = [
+      "bg-clear",
+      "bg-clouds",
+      "bg-rain",
+      "bg-snow",
+      "bg-mist",
+      "bg-thunder",
+      "bg-default"
+    ];
+
+    // Remove old background/weather classes
+    weatherClasses.forEach((cls) => document.body.classList.remove(cls));
+    if (weatherClass) {
+      document.body.classList.add(weatherClass);
+    }
+
+    // Handle dark/light mode globally
+    document.body.classList.remove("light", "dark");
+    document.body.classList.add(isDarkMode ? "dark" : "light");
+  }, [weatherData, isDarkMode]);
+*/
