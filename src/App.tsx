@@ -73,19 +73,33 @@ useEffect(() => {
 
   const weatherClass = getWeatherBackground(weatherData.weather[0].main);
 
-  const allClasses = [
-    "bg-clear",
-    "bg-clouds",
-    "bg-rain",
-    "bg-snow",
-    "bg-mist",
-    "bg-thunder",
-    "bg-default"
-  ];
+  if (weatherClass=="bg-rain") {
+    document.body.style.background = `url("https://i.imgur.com/kqbIVGC.gif")`;
+  }
+  else if (weatherClass=="bg-clouds") {
+    document.body.style.background = `url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGZvdDFqMDRiMWgxcTJjZWg5d244djJoeng1OHczdHliOGlqOGlsYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KwZoSJlvep6Vy/giphy.gif")`;
+  }
+  else if (weatherClass=="bg-clear") {
+    document.body.style.background = `url("https://24.media.tumblr.com/88f9ca54815ef1e8a4ccd67a062e52a6/tumblr_mstqhzIrfc1s75c57o1_500.gif")`;
+  }
+  else if (weatherClass=="bg-snow") {
+    document.body.style.background = `url("https://media1.tenor.com/m/Lx6ipmgUZwUAAAAC/cold-winter.gif")`;
+  }
+  else if (weatherClass=="bg-default") {
+    document.body.style.background = `url("https://24.media.tumblr.com/88f9ca54815ef1e8a4ccd67a062e52a6/tumblr_mstqhzIrfc1s75c57o1_500.gif")`;
+  }
+  else if (weatherClass=="bg-mist") {
+    document.body.style.background = `url("https://fyfluiddynamics.com/wp-content/uploads/2020/11/mist_water1.gif")`;
+  }
+  else if (weatherClass=="bg-thunder") {
+    document.body.style.background = `url("https://i.pinimg.com/originals/d1/f3/f5/d1f3f5f8d43f61d5cac86c8a7d3ad581.gif")`;
+  }
 
-  allClasses.forEach((cls) => document.body.classList.remove(cls));
-  document.body.classList.add(weatherClass);
 
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundPosition = "center";
+  document.body.style.backgroundAttachment = "fixed";
   document.body.classList.remove("dark", "light");
   document.body.classList.add(isDarkMode ? "dark" : "light");
 }, [weatherData, isDarkMode]);
