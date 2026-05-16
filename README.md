@@ -1,69 +1,49 @@
-# React + TypeScript + Vite
+# Smart Weather - 3D Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React weather app with 3D UI, weather-based particle animations, and a glassmorphism design.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **3D Perspective UI** — content tilts with mouse movement
+- **Weather Particle Effects** — sun rays, rain, snow, clouds, fog, thunderstorm animations on canvas
+- **Geolocation Auto-Detect** — automatically fetches weather for your location
+- **5-Day Forecast** — with min/max temperature bars and daily summaries
+- **Hourly Forecast** — scrollable 24-hour forecast strip
+- **Air Quality Index (AQI)** — PM2.5, PM10, O₃ levels with color-coded indicator
+- **Weather Alerts** — dynamic warnings for extreme heat, cold, storms, wind, fog, heavy rain
+- **Feels Like Temperature** — perceived temperature display
+- **Wind Direction** — animated compass arrow with cardinal direction label
+- **Sunrise/Sunset Times**
+- **Atmospheric Pressure**
+- **Recent Searches** — last 5 cities saved to localStorage
+- **Dark/Light Mode**
+- **°C / °F Toggle**
+- **Glassmorphism Design** — frosted glass cards with backdrop blur
+- **Animated Backgrounds** — weather-adaptive gradient backgrounds
+- **Responsive** — optimized for desktop and mobile
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19
+- Vite
+- JavaScript (JSX)
+- Canvas API (particle effects)
+- OpenWeatherMap API
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
+npm run preview
 ```
+
+## API
+
+Uses OpenWeatherMap free tier. API key is bundled in `src/api/weather.js`.
