@@ -1,4 +1,4 @@
-export function getWeatherBackground(condition: string): string {
+export function getWeatherBackground(condition) {
   switch (condition.toLowerCase()) {
     case "clear":
       return "bg-clear";
