@@ -6,7 +6,7 @@ A React weather app with 3D UI, weather-based particle animations, and a glassmo
 
 - **3D Perspective UI** — content tilts with mouse movement
 - **Weather Particle Effects** — sun rays, rain, snow, clouds, fog, thunderstorm animations on canvas
-- **Geolocation Auto-Detect** — automatically fetches weather for your location
+- **Geolocation Auto-Detect** — automatically fetches weather for your location.
 - **5-Day Forecast** — with min/max temperature bars and daily summaries
 - **Hourly Forecast** — scrollable 24-hour forecast strip
 - **Air Quality Index (AQI)** — PM2.5, PM10, O₃ levels with color-coded indicator
