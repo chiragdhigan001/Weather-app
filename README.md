@@ -46,4 +46,4 @@ npm run preview
 
 ## API
 
-Uses OpenWeatherMap free tier. API key is bundled in `src/api/weather.js`.
+Uses OpenWeatherMap free tier. API key is bundled in `src/api/weather.js`....
